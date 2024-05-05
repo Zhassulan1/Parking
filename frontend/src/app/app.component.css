@@ -1,0 +1,47 @@
+.top-bar {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    width: 98.7%;
+    margin-top: -1%;
+    margin-left: -0.8%;
+  }
+  
+  .logo {
+    margin-left: 10px;
+    font-size: 24px;
+    display: flex; /* Use flexbox for layout */
+    margin-bottom: -1%;
+  }
+  
+  .logo svg {
+    width: 33px; /* Adjust width of SVG */
+    margin-right: 10px;
+    margin-top: 10px; /* Add spacing between SVG and text */
+  }
+  
+  .logo p {
+    font-size: 32px;
+    margin-left: 35px;
+    margin-top: -40px; /* Remove default margin */
+    color: white
+  }
+  .logo a{
+    text-decoration: none;
+  }
+
+  .menu{
+    margin-top: 1%;
+  }
+  .menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  
+  .menu a:hover {
+    text-decoration: underline;
+  }
