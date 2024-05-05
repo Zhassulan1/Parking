@@ -24,6 +24,6 @@ def compare(p1, p2):
 def sort_parkings(parkings, latt, long):
     lat, lon = latt, long
     sorted_parkings = sorted(parkings, key=cmp_to_key(compare))
-    print(parkings)
+    # print(parkings)
 
     return sorted_parkings

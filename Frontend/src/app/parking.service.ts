@@ -8,7 +8,7 @@ import { Token } from './models'
   providedIn: 'root'
 })
 export class ParkingService {
-  BASE_URL = 'http://localhost:8000';
+  BASE_URL = 'http://127.0.0.1:8000';
   constructor(private http: HttpClient) { }
   ParkingList(): Observable<Parking[]> {
     return this.http.post<Parking[]>(`${this.BASE_URL}/api/user/${1}/parkings/`, { user_coordinates: [43.207890, 76.668825]});
