@@ -10,15 +10,8 @@ import { Token } from './models'
 export class ParkingService {
   BASE_URL = 'http://localhost:8000';
   constructor(private http: HttpClient) { }
-
-  login(username: string, password: string): Observable<Token> {
-    return this.http.post<Token>(
-      `${this.BASE_URL}/api/login/`, 
-      {username,password})
-  }
-
   ParkingList(): Observable<Parking[]> {
-    return this.http.post<Parking[]>(`${this.BASE_URL}/api/user/${1}/parkings/`, {"user_coordinates": [43.207890, 76.668825]});
+    return this.http.post<Parking[]>(`${this.BASE_URL}/api/user/${1}/parkings/`, { user_coordinates: [43.207890, 76.668825]});
   }
 
   getBalance(): Observable<any>{

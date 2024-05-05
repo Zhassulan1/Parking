@@ -12,14 +12,14 @@
         <button class="next" (click)="onNext(parking.parking_id)">❯</button>
     </div>
     <div>
-        <ul class="map">{{parking.map}}</ul>
+        <ul class="map" *ngIf="parking.map">{{parkings[1].map}}</ul>
     </div>
     <div class="map-legend">
         <div class="left-side">
             <p>Свободные места</p>
-            <h2>{{parking.free_spaces}}/{{parking.capacity}}</h2>
+            <h2>{{parkings[1].free_spaces}}/{{parkings[1].capacity}}</h2>
             <p>Время</p>
-            <h2>{{time}} - {{timenext}}</h2>
+            <h2></h2>
         </div>
         <div class="right-side">
             <img src="../assets/logo.png" alt="">

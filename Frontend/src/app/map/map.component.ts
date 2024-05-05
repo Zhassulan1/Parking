@@ -19,22 +19,12 @@ export class MapComponent implements OnInit{
   selectedTime!: string;
   price!: number;
 
-  isUserExist:any;
-
-  loginObj: any = {
-    Email: '',
-    Password: ''
-  };
-
-  signupUsers: any[] = [];
-  
-  time: string ="456";
-  timenext: string = "456";
-
-  constructor(private parkingService: ParkingService, private router: Router) {}
+  constructor(private parkingService: ParkingService,) {}
 
   ngOnInit(): void {
     // this.price = this.parking.price;
+    this.getParkings();
+    this.parking = this.parkings[0];
   }
 
 
@@ -80,8 +70,9 @@ export class MapComponent implements OnInit{
   }
 
   getParkings(){
-    this.parkingService.ParkingList().subscribe((data: Parking[]) => {
+    this.parkingService.ParkingList().subscribe((data) => {
       this.parkings = data;
+      console.log(this.parkings);
     })
   }
 }
