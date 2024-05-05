@@ -25,7 +25,7 @@ def parkings_list(request, user_id):
 
     personal_list = sort_parkings(parkings, lat, lon)
 
-    return JsonResponse({"message": "Parkings list received"})
+    return JsonResponse(personal_list, safe=False)
 
 
 @require_http_methods(["GET"])
