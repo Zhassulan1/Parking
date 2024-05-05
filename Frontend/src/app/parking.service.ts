@@ -8,7 +8,7 @@ import { Token } from './models'
   providedIn: 'root'
 })
 export class ParkingService {
-  BASE_URL = 'http://localhost:8000';
+  BASE_URL = 'http://127.0.0.1:8000';
   constructor(private http: HttpClient) { }
 
   login(username: string, password: string): Observable<Token> {

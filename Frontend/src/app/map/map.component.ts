@@ -34,7 +34,9 @@ export class MapComponent implements OnInit{
   constructor(private parkingService: ParkingService, private router: Router) {}
 
   ngOnInit(): void {
-    // this.price = this.parking.price;
+    this.getParkings();
+    this.price = this.parking.price;
+    console.log("Getting parkings: ", this.parking);
   }
 
 
@@ -82,6 +84,7 @@ export class MapComponent implements OnInit{
   getParkings(){
     this.parkingService.ParkingList().subscribe((data: Parking[]) => {
       this.parkings = data;
+      this.parking = this.parkings[0];
     })
   }
 }

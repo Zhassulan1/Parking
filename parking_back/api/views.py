@@ -24,8 +24,10 @@ def parkings_list(request, user_id):
     # print(type(parkings))
 
     personal_list = sort_parkings(parkings, lat, lon)
-
-    return JsonResponse(personal_list, safe=False)
+    serializer = ParkingSerializer(personal_list, many=True)
+    print(type(serializer.data))
+    print(serializer.data)
+    return JsonResponse(serializer.data, safe=False)
 
 
 @require_http_methods(["GET"])
