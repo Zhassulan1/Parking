@@ -34,9 +34,9 @@
 ```
 git clone https://github.com/Zhassulan1/Parking.git
 cd frontend && npm install && (ng serve | npm start)
-
 cd parking_back && cd Frontend && myvenv\scripts\activate:  
-pip install -r requirements.txt  
+pip install -r requirements.txt
+pip install django-cors-headers 
 pip install django_rest_framework
 python manage.py runserver`
 ````
