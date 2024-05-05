@@ -221,9 +221,8 @@ font-family: var(--font-family, CircularSp, CircularSp-Arab, CircularSp-Hebr, Ci
 }
 
 .map iframe{
-    width: 108%;
-    height: 100%;
-    margin-left: -8%;
+    width: 510px;
+    height: 100px;
     border-radius: 16px;
 }
 

@@ -10,7 +10,7 @@ export interface Parking {
     lat: number,
     lon: number,
     is_paid: boolean,
-    price: number,
+    price: string,
     free_spaces: Number,
     capacity: Number
 }

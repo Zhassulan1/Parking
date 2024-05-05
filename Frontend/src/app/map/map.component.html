@@ -11,15 +11,14 @@
         <span class="street">ToleBi</span>
         <button class="next" (click)="onNext(parking.parking_id)">❯</button>
     </div>
-    <div>
-        <ul class="map" *ngIf="parking.map">{{parkings[1].map}}</ul>
+    <div class="map" [innerHTML]="getSafeHtml(parking.map)">
     </div>
     <div class="map-legend">
         <div class="left-side">
             <p>Свободные места</p>
-            <h2>{{parkings[1].free_spaces}}/{{parkings[1].capacity}}</h2>
+            <h2>{{parking.free_spaces}}/{{parking.capacity}}</h2>
             <p>Время</p>
-            <h2></h2>
+            <h2>19:00-{{time}}:00</h2>
         </div>
         <div class="right-side">
             <img src="../assets/logo.png" alt="">
@@ -32,6 +31,7 @@
             <p>{{price}}</p>
         </div>
     </div>
-    <button class="place-btn">Забронировать место</button>
+    <button class="place-btn" (click)="onTake()" >Забронировать место</button>
+
 </div>
 <img class="car-img" src="../assets/car.png" alt="">

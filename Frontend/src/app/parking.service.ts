@@ -17,4 +17,8 @@ export class ParkingService {
   getBalance(): Observable<any>{
     return this.http.get<any>(`${this.BASE_URL}/api/user/1/`);
   }
+
+  postRentedParking(){
+    return this.http.post(`${this.BASE_URL}/api/user/1/reserve/2`, {time: 1})
+  }
 }
