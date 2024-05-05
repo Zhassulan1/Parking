@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    font-family: 'League Spartan', sans-serif;
+}
+
+body{
+    background-color: black;
+}
+
+body::-webkit-scrollbar {
+    width: 15px;
+    padding: 0;
+    margin-left: -1%;
+    background-color: #2c2b2b;
+  }
+  
+  /* Цвет заливки полосы прокрутки */
+  body::-webkit-scrollbar-thumb {
+    background-color: #5d5c5c;
+  }
+  
+  /* Цвет при наведении на полосу прокрутки */
+  body::-webkit-scrollbar-thumb:hover {
+    background-color: none;
+  }

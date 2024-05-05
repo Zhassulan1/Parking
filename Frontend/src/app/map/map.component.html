@@ -1,7 +1,37 @@
-<div>
-    <button class="prev">❮</button>
-    <div>
-        <ul class="map" [innerHTML]="mapString"></ul>
+
+
+<h1 class="title">Найди своё <br>
+    место с OrynTap!
+</h1>
+<!-- <p><img src="Frontend\src\assets\leftcar.png" alt=""></p> -->
+
+<div class="map-container">
+    <div style="text-align: center;">
+        <button class="prev" (click)="onPrev(parking.parking_id)">❮</button>
+        <span class="street">ToleBi</span>
+        <button class="next" (click)="onNext(parking.parking_id)">❯</button>
     </div>
-    <button class="next">❯</button>
+    <div>
+        <ul class="map">{{parking.map}}</ul>
+    </div>
+    <div class="map-legend">
+        <div class="left-side">
+            <p>Свободные места</p>
+            <h2>{{parking.free_spaces}}/{{parking.capacity}}</h2>
+            <p>Время</p>
+            <h2>{{time}} - {{timenext}}</h2>
+        </div>
+        <div class="right-side">
+            <img src="../assets/logo.png" alt="">
+            <select class="select-time" (change)="onTimeSelected($event)">
+                <option value="1h">1час</option>
+                <option value="2h" >2час</option>
+                <option value="3h" >3час</option>
+                <option value="4h" >4час</option>
+            </select> 
+            <p>{{price}}</p>
+        </div>
+    </div>
+    <button class="place-btn">Забронировать место</button>
 </div>
+<img class="car-img" src="../assets/car.png" alt="">

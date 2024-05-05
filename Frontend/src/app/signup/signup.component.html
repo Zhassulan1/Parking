@@ -1,0 +1,29 @@
+<div class="parent">
+    <div class="container">
+        <div class = "img_container">
+            <img src="../assets/logo.png" alt="Web Player Logo" class="webplayer-logo">
+        </div>
+        <h2>Registration in the I Love Dogs</h2>
+        <div class="signup-box">
+            <form action="#">
+                <div class="input-box">
+                    <p>Email</p>
+                    <input type="email" [(ngModel)]="signupObj.Email" name="Email" required>
+                </div>
+                <div class="input-box">
+                    <p>Password</p>
+                    <input type="password" [(ngModel)]="signupObj.Password" name="Password" required>
+                </div>
+                <div class="input-box">
+                    <p>Confirm the password</p>
+                    <input type="password" [(ngModel)]="signupObj.ConfirmPassword" name="ConfirmPassword" required>
+                </div>
+                <button type="button" class="btn" (click)="onSignup()">Register</button>
+            </form>
+        </div>
+        <div class="signup-link">
+            <p>Already have an account?</p>
+            <a [routerLink]="['/login']">Enter</a>
+        </div>
+    </div>
+</div>
