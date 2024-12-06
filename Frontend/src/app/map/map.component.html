@@ -4,11 +4,15 @@
     место с OrynTap!
 </h1>
 <!-- <p><img src="Frontend\src\assets\leftcar.png" alt=""></p> -->
-
+<div class="search-container">
+    <input placeholder="Введите адрес" type="text">
+    <button >Найти</button>
+  </div>
+  
 <div class="map-container">
     <div style="text-align: center;">
         <button class="prev" (click)="onPrev(parking.parking_id)">❮</button>
-        <span class="street">ToleBi</span>
+        <span class="street">{{parking.address}}</span>
         <button class="next" (click)="onNext(parking.parking_id)">❯</button>
     </div>
     <div class="map" [innerHTML]="getSafeHtml(parking.map)">

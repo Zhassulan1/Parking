@@ -181,7 +181,7 @@ font-family: var(--font-family, CircularSp, CircularSp-Arab, CircularSp-Hebr, Ci
     width: 600px;
     margin: auto;
     border-radius: 16px;
-    margin-top: -2%;
+    margin-top: 2%;
 }
 
 .prev{
@@ -221,7 +221,7 @@ font-family: var(--font-family, CircularSp, CircularSp-Arab, CircularSp-Hebr, Ci
 }
 
 .map iframe{
-    width: 510px;
+    width: 410px;
     height: 100px;
     border-radius: 16px;
 }
@@ -289,3 +289,34 @@ font-family: var(--font-family, CircularSp, CircularSp-Arab, CircularSp-Hebr, Ci
     margin-top: -37%;
     position: absolute;
 }
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+  }
+  
+  .search-container input {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    border-radius: 8px;
+    color:#000000;
+    border: 1px solid #ccc;
+  }
+  
+  .search-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3462d6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .search-container button:hover {
+    background-color: #2d58c9;
+  }
+  

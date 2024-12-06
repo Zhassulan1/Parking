@@ -22,6 +22,7 @@ export class MapComponent implements OnInit{
   price!: number;
   time: Number = 20;
   reserved: boolean = false;
+  searchQuery: any;
 
   constructor(private parkingService: ParkingService,private sanitizer: DomSanitizer) {}
 
@@ -59,25 +60,20 @@ export class MapComponent implements OnInit{
     }
   }
 
-  onNext(id: Number){
-    if (Number(id) - 1 == this.parkings.length){
-      this.parking = this.parkings[0];
-    }
-    else {
-      this.parking = this.parkings[Number(id)];
-    }
+  onNext(id: Number): void {
+    const currentIndex = this.parkings.findIndex(parking => parking.parking_id === id);
+    const nextIndex = (currentIndex + 1) % this.parkings.length;  // Цикличный переход
+    this.parking = this.parkings[nextIndex];
     this.price = Number(this.parking.price);
   }
-
-  onPrev(id: Number){
-    if(Number(id) - 1 == 0){
-      this.parking = this.parkings[this.parkings.length + 1];
-    }
-    else{
-      this.parking = this.parkings[Number(id)-2];
-    }
+  
+  onPrev(id: Number): void {
+    const currentIndex = this.parkings.findIndex(parking => parking.parking_id === id);
+    const prevIndex = (currentIndex - 1 + this.parkings.length) % this.parkings.length;  // Цикличный переход
+    this.parking = this.parkings[prevIndex];
     this.price = Number(this.parking.price);
   }
+  
 
   getParkings(){
     this.parkingService.ParkingList().subscribe((data) => {
@@ -94,10 +90,10 @@ export class MapComponent implements OnInit{
   }
 
   onTake(){
-    this.parkingService.postRentedParking().subscribe((data)=>{
-      alert("Parking reserved successfully!");
-    })
-    this.parking.free_spaces = Number(this.parking.free_spaces) - 1;  
+    alert("Parking reserved successfully!");
+    this.parking.free_spaces = Number(this.parking.free_spaces) - 1;
+      
   }
+
 
 }
